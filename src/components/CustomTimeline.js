@@ -19,10 +19,12 @@ class CustomTimeline extends React.Component {
   };
 
   render() {
+    const { data } = this.props;
     return (
       <View>
         <Text>
           Under Construction
+          {JSON.stringify(data)}
         </Text>
       </View>
     );
