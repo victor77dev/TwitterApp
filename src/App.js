@@ -5,9 +5,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { createDrawerNavigator } from 'react-navigation';
-import CustomTimeline from './components/CustomTimeline';
-import EmbedTimeline from './components/EmbedTimeline';
-import AppHeader from './components/AppHeader';
+import CustomTimelineContainer from './containers/CustomTimelineContainer';
+import EmbedTimelineContainer from './containers/EmbedTimelineContainer';
+import AppHeader from './containers/AppHeader';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
 });
 
 const Screens = createDrawerNavigator({
-  CustomTimeline: { screen: CustomTimeline },
-  EmbedTimeline: { screen: EmbedTimeline },
+  CustomTimeline: { screen: CustomTimelineContainer },
+  EmbedTimeline: { screen: EmbedTimelineContainer },
 });
 
 class App extends React.Component {
