@@ -3,8 +3,8 @@
  */
 
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { Header } from 'react-native-elements';
+import { StyleSheet, FlatList, View, Text } from 'react-native';
+import Tweet from './Tweet';
 
 const styles = StyleSheet.create({
   header: {
@@ -12,6 +12,12 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
+
+const Loading = () => {
+  return (
+    <Text>Loading</Text>
+  )
+}
 
 class CustomTimeline extends React.Component {
   static navigationOptions = {
@@ -22,10 +28,17 @@ class CustomTimeline extends React.Component {
     const { data } = this.props;
     return (
       <View>
-        <Text>
-          Under Construction
-          {JSON.stringify(data)}
-        </Text>
+        {
+          data === null
+          ? <Loading />
+          : <FlatList
+              data={data}
+              renderItem={({item}) => {
+                return <Tweet tweet={item} />
+              }}
+              keyExtractor={(item) => `${item.id}`}
+            />
+        }
       </View>
     );
   }
