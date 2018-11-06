@@ -41,7 +41,7 @@ class AppHeader extends React.Component {
       <View style={styles.header}>
         <Header
           leftComponent={<MenuButton clickMenu={clickMenu} />}
-          centerComponent={{ text: ` Blockchain AG`, style: { color: '#fff' } }}
+          centerComponent={{ text: `Advanced Blockchain AG`, style: { color: '#fff' } }}
         />
       </View>
     )
