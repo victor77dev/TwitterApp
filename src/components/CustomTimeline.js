@@ -5,6 +5,7 @@
 import React from 'react';
 import { StyleSheet, FlatList, View, Text } from 'react-native';
 import Tweet from './Tweet';
+import Loading from './Loading';
 
 const styles = StyleSheet.create({
   header: {
@@ -12,12 +13,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
-
-const Loading = () => {
-  return (
-    <Text>Loading</Text>
-  )
-}
 
 class CustomTimeline extends React.Component {
   static navigationOptions = {
